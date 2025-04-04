@@ -32,6 +32,13 @@ class AppFixtures extends Fixture
             'places' => 4,
             'transmission' => 0,
         ],
+        [
+            'name' => 'Renault Zoé',
+            'dayPrice' => 39.14,
+            'monthPrice' => 900,
+            'places' => 4,
+            'transmission' => 0,
+        ],
     ];
 
     public function load(ObjectManager $manager) : void
