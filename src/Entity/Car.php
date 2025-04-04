@@ -21,10 +21,10 @@ class Car
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?int $dayPrice = null;
+    private ?float $dayPrice = null;
 
     #[ORM\Column]
-    private ?int $monthPrice = null;
+    private ?float $monthPrice = null;
 
     #[ORM\Column]
     private ?int $places = null;
@@ -61,24 +61,24 @@ class Car
         return $this;
     }
 
-    public function getMonthPrice(): ?int
+    public function getMonthPrice(): ?float
     {
         return $this->monthPrice;
     }
 
-    public function setMonthPrice(int $monthPrice): static
+    public function setMonthPrice(float $monthPrice): static
     {
         $this->monthPrice = $monthPrice;
 
         return $this;
     }
 
-    public function getDayPrice(): ?int
+    public function getDayPrice(): ?float
     {
         return $this->dayPrice;
     }
 
-    public function setDayPrice(int $dayPrice): static
+    public function setDayPrice(float $dayPrice): static
     {
         $this->dayPrice = $dayPrice;
 
