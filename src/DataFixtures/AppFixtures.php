@@ -13,22 +13,22 @@ class AppFixtures extends Fixture
     private array $cars = [
         [
             'name' => 'Renault Twingo',
-            'monthPrice' => 39.14,
-            'yearPrice' => 900,
+            'dayPrice' => 39.14,
+            'monthPrice' => 900,
             'places' => 4,
             'transmission' => 0,
         ],
         [
             'name' => 'Renault Clio',
-            'monthPrice' => 38.64,
-            'yearPrice' => 850,
+            'dayPrice' => 38.64,
+            'monthPrice' => 850,
             'places' => 4,
             'transmission' => 0,
         ],
         [
             'name' => 'BMX IX (electric)',
-            'monthPrice' => 42.40,
-            'yearPrice' => 950,
+            'dayPrice' => 42.40,
+            'monthPrice' => 950,
             'places' => 4,
             'transmission' => 0,
         ],
@@ -41,8 +41,8 @@ class AppFixtures extends Fixture
                 new Car()
                     ->setName($car['name'])
                     ->setDescription($this->description)
+                    ->setDayPrice($car['dayPrice'])
                     ->setMonthPrice($car['monthPrice'])
-                    ->setYearPrice($car['yearPrice'])
                     ->setPlaces($car['places'])
                     ->setTransmission($car['transmission'])
             );

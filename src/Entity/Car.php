@@ -21,10 +21,10 @@ class Car
     private ?string $description = null;
 
     #[ORM\Column]
-    private ?int $monthPrice = null;
+    private ?int $dayPrice = null;
 
     #[ORM\Column]
-    private ?int $yearPrice = null;
+    private ?int $monthPrice = null;
 
     #[ORM\Column]
     private ?int $places = null;
@@ -73,14 +73,14 @@ class Car
         return $this;
     }
 
-    public function getYearPrice(): ?int
+    public function getDayPrice(): ?int
     {
-        return $this->yearPrice;
+        return $this->dayPrice;
     }
 
-    public function setYearPrice(int $yearPrice): static
+    public function setDayPrice(int $dayPrice): static
     {
-        $this->yearPrice = $yearPrice;
+        $this->dayPrice = $dayPrice;
 
         return $this;
     }
