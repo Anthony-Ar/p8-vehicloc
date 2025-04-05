@@ -32,4 +32,25 @@ final class CarController extends AbstractController
         ]);
     }
 
+    /**
+     * Supprime une voiture de la base de données
+     * @param int $id
+     * @param EntityManagerInterface $entityManager
+     * @return Response
+     */
+    #[Route('/car/{id}/delete', name: 'app_delete_car')]
+    public function deleteCar(int $id, EntityManagerInterface $entityManager) : Response
+    {
+        $car = $this->carRepository->find($id);
+
+        if (!$car) {
+            throw $this->createNotFoundException('Impossible de trouver la voiture correspondante.');
+        }
+
+        $entityManager->remove($car);
+        $entityManager->flush();
+
+        $this->addFlash('success', 'Voiture supprimé avec succès.');
+        return $this->redirectToRoute('app_home');
+    }
 }
