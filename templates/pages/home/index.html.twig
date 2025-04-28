@@ -27,8 +27,8 @@
                             <p>{{ car.places }} places</p>
                         </div>
                         <div>
-                            <img src="assets/icons/motor.png" alt="Manuelle"/>
-                            <p>{{ car.transmission|transmission }}</p>
+                            <img src="assets/icons/motor.png" alt="{{ car.carType.label() }}"/>
+                            <p>{{ car.carType.label() }}</p>
                         </div>
                         <div>
                             <img src="assets/icons/km.png" alt="km illimités"/>

@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use App\Enum\CarType;
 use App\Repository\CarRepository;
 use Doctrine\DBAL\Types\Types;
 use Doctrine\ORM\Mapping as ORM;
@@ -29,8 +30,8 @@ class Car
     #[ORM\Column]
     private ?int $places = null;
 
-    #[ORM\Column]
-    private ?int $transmission = null;
+    #[ORM\Column(nullable: true, enumType: CarType::class)]
+    private ?CarType $carType = null;
 
     public function getId(): ?int
     {
@@ -97,14 +98,14 @@ class Car
         return $this;
     }
 
-    public function getTransmission(): ?int
+    public function getCarType(): ?CarType
     {
-        return $this->transmission;
+        return $this->carType;
     }
 
-    public function setTransmission(int $transmission): static
+    public function setCarType(CarType $carType): static
     {
-        $this->transmission = $transmission;
+        $this->carType = $carType;
 
         return $this;
     }

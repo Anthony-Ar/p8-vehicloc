@@ -5,6 +5,7 @@ namespace App\Form;
 use App\Entity\Car;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\EnumType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
 use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
@@ -53,12 +54,10 @@ class CarType extends AbstractType
                 'choices' => [1, 2, 3, 4, 5, 6, 7, 8, 9],
                 'label' => 'Nombre de places'
             ])
-            ->add('transmission', ChoiceType::class, [
-                'choices' => [
-                    'Manuelle' => 0,
-                    'Automatique' => 1,
-                ],
-                'label' => 'Boîte de vitesse'
+            ->add('carType', EnumType::class, [
+                'class' => \App\Enum\CarType::class,
+                'label' => 'Boîte de vitesse',
+                'choice_label' => fn(\App\Enum\CarType $choice) => $choice->label()
             ])
         ;
     }
