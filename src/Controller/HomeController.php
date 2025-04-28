@@ -7,7 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Attribute\Route;
 
-final class MainController extends AbstractController
+final class HomeController extends AbstractController
 {
     /**
      * Affiche la page d'accueil de l'application
